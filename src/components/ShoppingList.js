@@ -1,43 +1,37 @@
- import React, { useState } from "react";
-import Item from "./Item";
+import React, { useState } from 'react';
+import Item from './Item';
+import ShoppingList from './ShoppingList.js'
+import App from './App.js'
 
-const ShoppingList = () => {
-  const [selectedCategory, setSelectedCategory] = useState('all'); 
-  const [items, setItems] = useState([
-    { id: 1, name: 'Item 1', category: 'food' },
-    { id: 2, name: 'Item 2', category: 'electronics' },
-    { id: 3, name: 'Item 3', category: 'clothing' },
-    
-  ]);
+const categories = ['All', 'Electronics', 'Clothes', 'Toys']; // Define your item categories
 
-  const handleCategoryChange = (e) => {
-    setSelectedCategory(e.target.value);
+function ShoppingList({ items }) {
+  const [selectedCategory, setSelectedCategory] = useState('All'); // Initial state: all items
+
+  const handleCategoryChange = (event) => {
+    setSelectedCategory(event.target.value);
   };
 
-  const filteredItems = selectedCategory === 'all'
-    ? items
-    : items.filter(item => item.category === selectedCategory);
+  const filteredItems = items.filter(
+    (item) => selectedCategory === 'All' || item.category === selectedCategory
+  );
 
   return (
     <div>
-      <label htmlFor="category">Select Category:</label>
-      <select id="category" value={selectedCategory} onChange={handleCategoryChange}>
-        <option value="all">All</option>
-        <option value="food">Food</option>
-        <option value="electronics">Electronics</option>
-        <option value="clothing">Clothing</option>
-        
-      </select>
-
-      <ul>
-        {filteredItems.map(item => (
-          <li key={item.id}>
-            {item.name} - {item.category}
-          </li>
+      <select value={selectedCategory} onChange={handleCategoryChange}>
+        {categories.map((category) => (
+          <option key={category} value={category}>
+            {category}
+          </option>
         ))}
+      </select>
+      <ul>
+        {filteredItems.map((item) =>{} 
+          
+        )}
       </ul>
     </div>
   );
-};
+}
 
 export default ShoppingList;

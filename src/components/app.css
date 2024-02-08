@@ -1,10 +1,10 @@
+.light-mode {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* Styles for dark mode */
 .dark-mode {
-    background-color: #1a1a1a;
-    color: #fff;
-  }
-  
-  .light-mode {
-    background-color: #fff;
-    color: #000;
-  }
-  export :default .dark-mode, .light-mode
+  background-color: #222222;
+  color: #ffffff;
+}

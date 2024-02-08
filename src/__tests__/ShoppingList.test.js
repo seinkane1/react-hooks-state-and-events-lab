@@ -1,6 +1,7 @@
-import "@testing-library/jest-dom";
+// import "@testing-library/jest-dom";
 import { render, screen, fireEvent } from "@testing-library/react";
 import ShoppingList from "../components/ShoppingList";
+import Item from "../components/Item";
 
 const testData = [
   { id: 1, name: "Yogurt", category: "Dairy" },

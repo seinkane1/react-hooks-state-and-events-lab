@@ -1,21 +1,21 @@
-import React, {useState} from "react";
+import React, { useState } from 'react';
 
-import './App.css'; 
-
-
-const App = () => {
+function App() {
   const [isDarkMode, setIsDarkMode] = useState(false); 
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode); 
+  const handleToggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
   };
 
   return (
-    <div className={isDarkMode ? 'dark-theme' : 'light-theme'}>
+    <div className={isDarkMode ? 'App dark' : 'App light'}>
       
-      <button onClick={toggleDarkMode}>Toggle Dark Mode</button>
+
+      <button onClick={handleToggleDarkMode}>
+        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+      </button>
     </div>
   );
-};
+}
 
-export default App
+export default App;
