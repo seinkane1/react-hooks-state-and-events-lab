@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
-import Item from './Item';
-import ShoppingList from './ShoppingList.js'
-import App from './App.js'
+import ShoppingList from '/.MyShoppingList';
 
-const categories = ['All', 'Electronics', 'Clothes', 'Toys']; // Define your item categories
+
+const categories = ['All', 'Electronics', 'Clothes', 'Toys']; 
 
 function ShoppingList({ items }) {
-  const [selectedCategory, setSelectedCategory] = useState('All'); // Initial state: all items
-
+  const [selectedCategory, setSelectedCategory] = useState('All'); 
   const handleCategoryChange = (event) => {
     setSelectedCategory(event.target.value);
   };
@@ -26,6 +24,7 @@ function ShoppingList({ items }) {
         ))}
       </select>
       <ul>
+      <ul className="Items"/>
         {filteredItems.map((item) =>{} 
           
         )}
